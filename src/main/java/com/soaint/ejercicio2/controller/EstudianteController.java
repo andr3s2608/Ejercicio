@@ -35,9 +35,9 @@ public class EstudianteController {
 	 */
 	@PostMapping
 	public ResponseEntity<?> crear(@RequestBody Estudiante estudiante){
-		if(estudiante.getEdad()>=18)
+		if(estudiante.getEdad()<=18)
 		{
-			return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
+			return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("Estudiante invalido");
 		}
 		else
 		{
